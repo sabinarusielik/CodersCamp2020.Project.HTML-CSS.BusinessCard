@@ -1,0 +1,136 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+
+html {
+    font-family: Gopher;
+    font-size: 20px;
+}
+
+.main_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 250px 6fr 1fr;
+    grid-template-areas: 
+        "lm nav proj rm"
+        "lm nf  foot rm";
+    gap: 20px;
+    grid-auto-rows: auto;
+    justify-items: center;
+}
+
+/* Navbar */
+
+header {
+    grid-area: nav;
+    display: block;
+    padding-top: 50%;
+}
+
+.logo {
+    display: block;
+    min-width: 250px;
+    margin-bottom: 50px;
+}
+
+.navbar {
+    list-style-type: none;
+    text-align: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.5);
+    line-height: 2;
+}
+
+.navbar a.active {
+    color: rgb(0, 0, 0);
+}
+
+.navbar a:hover {
+    color: rgb(0, 0, 0);
+}
+
+/* Projects */
+
+.projects_wrapper {
+    grid-area: proj;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.project {
+    display: inline-block;
+    width: 500px;
+    height: 500px;
+}
+
+.project img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.overlay {
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+.overlay .opis {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 138, 27, 0.7);
+    left: 0px;
+    top: 0px;
+    text-decoration: none;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.overlay:hover .opis{
+    opacity: 1;
+}
+
+.overlay h2 {
+    display: block;
+    font-weight: 700;
+    font-size: 3.5rem;
+    position: absolute;
+    line-height: 1;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+.overlay .typ {
+    font-weight: 400;
+    font-size: 1rem;
+    display: block;
+    margin-top: 1rem;
+    line-height: 1.3;
+}
+
+/* Footer */
+
+footer {
+    grid-area: foot;
+}
+
+footer img {
+    min-height: 20px;
+    padding: 50px;
+    height: auto;
+    width: 100%;
+}
