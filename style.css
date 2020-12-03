@@ -13,24 +13,28 @@ html {
 
 .main_wrapper {
     display: grid;
-    grid-template-columns: 1fr 250px 6fr 1fr;
+    grid-template-columns: 1fr minmax(200px, 250px) minmax(900px, 1200px) 1fr;
     grid-template-areas: 
         "lm nav proj rm"
         "lm nf  foot rm";
-    gap: 20px;
+    gap: 50px;
 }
 
 /* Navbar */
 
 header {
     grid-area: nav;
-    min-width: 250px;
-    padding-top: 50%;
+    max-width: 250px;
+}
+
+.nav_wrapper {
+    min-width: 200px;
+    position: sticky;
+    top: 25%;
 }
 
 .logo {
     display: block;
-    min-width: 250px;
     margin-bottom: 50px;
     width: 100%;
     height: auto;
@@ -45,11 +49,29 @@ header {
     text-decoration: none;
     color: rgba(0, 0, 0, 0.5);
     line-height: 2;
+    position: relative;
 }
 
 .navbar a.tutaj {
     color: rgb(0, 0, 0);
 }
+
+/* .navbar a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+    background-color: rgb(255, 138, 27);
+    visibility: hidden;
+    transition: all 0.2s ease-out;
+}
+
+.navbar a:hover:before {
+    visibility: visible;
+    width: 100%;
+} */
 
 .navbar a:hover {
     color: rgb(0, 0, 0);
@@ -161,6 +183,7 @@ header {
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%);
+    padding: 0 10%;
 }
 
 .overlay .typ {
