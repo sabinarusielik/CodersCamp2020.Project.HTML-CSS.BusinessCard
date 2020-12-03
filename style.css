@@ -18,15 +18,13 @@ html {
         "lm nav proj rm"
         "lm nf  foot rm";
     gap: 20px;
-    grid-auto-rows: auto;
-    justify-items: center;
 }
 
 /* Navbar */
 
 header {
     grid-area: nav;
-    display: block;
+    min-width: 250px;
     padding-top: 50%;
 }
 
@@ -34,6 +32,8 @@ header {
     display: block;
     min-width: 250px;
     margin-bottom: 50px;
+    width: 100%;
+    height: auto;
 }
 
 .navbar {
@@ -47,7 +47,7 @@ header {
     line-height: 2;
 }
 
-.navbar a.active {
+.navbar a.tutaj {
     color: rgb(0, 0, 0);
 }
 
@@ -55,32 +55,81 @@ header {
     color: rgb(0, 0, 0);
 }
 
+.navbar a:active {
+    color:  rgb(255, 138, 27);
+}
+
 /* Projects */
 
 .projects_wrapper {
     grid-area: proj;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 50%);
     gap: 0;
 }
 
 .project {
-    display: inline-block;
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
 }
 
-.project img {
-    width: 500px;
-    height: 500px;
-    object-fit: cover;
+.project:after {
+    content: "";
+    display: block;
+    padding-top: 100%;
+}
+
+.photo {
+    position: absolute;
+    width: 100%;
+    height: 100%;
 }
 
 .overlay {
     position: relative;
-    width: 500px;
-    height: 500px;
+    width: 100%;
+    height: 100%;
 }
+
+/* img in bg */
+.overlay div {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+}
+
+    /* imgs from projects */
+
+    .overlay div.paradiso {
+        background-image: url(img/hover_paradisoczb.png);
+    }
+
+    .overlay div.uczulenie {
+        background-image: url(img/hover_uczulenie.png);
+    }
+
+    .overlay div.smartbee {
+        background-image: url(img/hover_omi.png);
+    }
+
+    .overlay div.krwawica {
+        background-image: url(img/hover_krwawica.png);
+    }
+
+    .overlay div.arcom {
+        background-image: url(img/hover_arcom.png);
+    }
+
+    .overlay div.zkat {
+        background-image: url(img/hover_zkat.png);
+    }
+
+    .overlay div.madrypolak {
+        background-image: url(img/hover_mp.png);
+    }
+
+
 
 .overlay .opis {
     position: absolute;
@@ -129,8 +178,8 @@ footer {
 }
 
 footer img {
-    min-height: 20px;
-    padding: 50px;
+    max-height: 30px;
+    padding: 1.5em;
     height: auto;
     width: 100%;
 }
