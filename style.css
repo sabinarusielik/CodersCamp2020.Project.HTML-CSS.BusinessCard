@@ -56,7 +56,7 @@ header {
     color: rgb(0, 0, 0);
 }
 
-/* .navbar a:before {
+.navbar a:before {
     content: "";
     position: absolute;
     width: 0;
@@ -71,7 +71,7 @@ header {
 .navbar a:hover:before {
     visibility: visible;
     width: 100%;
-} */
+}
 
 .navbar a:hover {
     color: rgb(0, 0, 0);
