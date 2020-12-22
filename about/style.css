@@ -11,7 +11,7 @@
 }
 
 html {
-    font-family: Gopher;
+    font-family: Gopher, sans-serif;
     font-size: 20px;
 }
 
@@ -123,4 +123,103 @@ footer img {
 
 .popout {
     font-weight: 700;
+}
+
+@media (max-width: 850px) {
+    .main_wrapper {
+        grid-template-columns: 200px 1fr;
+        grid-template-areas: 
+            "nav proj"
+            "lr foot";
+        gap: 0;
+    }
+
+    html {
+        font-size: 17px;
+    }
+
+    .omnie_wrapper {
+        padding: 15vh 2rem 0 2rem;
+    }
+
+    footer img {
+        max-height: 10px;
+    }
+}
+
+@media (max-width: 470px), (max-width: 850px) and (orientation: landscape) {
+    .main_wrapper {
+        display: grid;
+        grid-template-columns: minmax(240px, 1fr);
+        grid-template-rows: 1fr min-content 1fr;
+        grid-template-areas: 
+            "nav"
+            "proj"
+            "foot";
+        gap: 0;
+    }
+
+    .nav_wrapper {
+        top: 0;
+    }
+
+    .omnie_wrapper {
+        padding: 1rem 2rem;
+        text-align: center;
+    }
+
+    footer {
+        max-height: auto;
+    }
+
+    footer img {
+        max-height: 10px;
+        margin: 1em 0;
+        height: auto;
+        width: 100%;
+    }
+
+    header {
+        margin: 0 auto;
+        padding: 0;
+        max-height: auto;
+    }
+
+    .logowrap {
+        background: url(../img/logo_short.svg) no-repeat center;
+        height: 1rem;
+        width: auto;
+        margin: 1rem;
+        align-self: center;
+    }
+
+    .logo {
+        overflow: hidden;
+        margin-bottom: 10px;
+        visibility: hidden;
+        position: absolute;
+    }
+    
+    .navbar {
+        list-style-type: none;
+    }
+    
+    .navbar li {
+        display: inline;
+        padding-right: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .navbar a:hover:before {
+        visibility: hidden;
+        width: 0%;
+    }
+
+    .onlydesk {
+        opacity: 0;
+    }
+
+    h1 {
+        color: rgb(255, 138, 27);
+    }
 }
