@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+}
+
+*::selection {
+    background: rgb(255, 138, 27);
+}
+
+html {
+    font-family: Gopher;
+    font-size: 20px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: white;
+}
+
+.nav_wrapper {
+    padding: 2rem;
+}
+
+.logo {
+    width: auto;
+    height: 1rem;
+    display: inline;
+    padding-left: 2rem;
+}
+
+.navbar {
+    list-style-type: none;
+}
+
+.navbar li {
+    display: inline;
+    padding-right: 2rem;
+}
+
+.rightfloat {
+    float: right;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.navbar li a.tutaj {
+    color: rgb(0, 0, 0);
+}
+
+.navbar li a:before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 5px;
+    bottom: 0;
+    z-index: -1;
+    left: 0;
+    background-color: rgb(255, 138, 27);
+    visibility: hidden;
+    transition: all 0.2s ease-out;
+}
+
+.navbar li a:hover:before {
+    visibility: visible;
+    width: 100%;
+}
+
+.navbar li a:hover {
+    color: rgb(0, 0, 0);
+}
+
+.navbar li a:active {
+    color:  rgb(255, 138, 27);
+}
+
+.intro {
+    padding: 2rem 5rem;
+    text-align: center;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 3.5rem;
+    padding-bottom: 1rem;
+}
+
+p {
+    padding-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+p.collabo {
+    font-size: 1rem;
+}
+
+p.collabo .light {
+    font-weight: 200;
+}
+
+.photo {
+    width: 100vw;
+    max-width: 100%;
+    display: block;
+}
+
+footer img {
+    max-height: 20px;
+    margin: 2em 0;
+    height: auto;
+    width: 100%;
+}
