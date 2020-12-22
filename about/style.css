@@ -119,6 +119,19 @@ footer img {
   font-weight: 700;
 }
 
+.popout:hover {
+  position: relative;
+  animation-name: orangepop;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+}
+
+@keyframes orangepop {
+  0% {color:rgb(0, 0, 0);}
+  50% {color: rgb(255, 138, 27);}
+  100% {color:rgb(0, 0, 0);}
+}
+
 @media (max-width: 850px) {
   .main_wrapper {
     grid-template-columns: 200px 1fr;
