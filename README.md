@@ -5,7 +5,7 @@ Powstała wizytówka ma mi posłużyć jako portfolio graficzne. Jej główny co
 ### Główna struktura strony
 Zdecydowałam, że do zakodowania zaprojektowanego wcześniej layoutu najlepiej sprawdzi się grid i to właśnie na nim zbudowany jest szkielet strony głównej i 2 podstron (*moje projekty, o mnie i kontakt*). 
 
-![website mockup](./img_mockup.png)
+![website mockup](img_mockup.PNG)
 
 ### Moje projekty
 Kliknięcie w kafelek przenosi na podstronę konkretnego projektu. Składa się ona z krótkich opisów i zdjęć skalowanych na całą szerokość ekranu.
