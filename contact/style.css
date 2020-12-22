@@ -22,7 +22,7 @@ html {
 .main_wrapper {
     display: grid;
     height: 100vh;
-    grid-template-columns: 1fr 250px minmax(900px, 1200px) 1fr;
+    grid-template-columns: 1fr 250px minmax(450px, 1200px) 1fr;
     grid-template-rows: 8fr 1fr;
     grid-template-areas: 
         "lm nav proj rm"
@@ -97,7 +97,6 @@ header {
 .kontakt_wrapper {
     grid-area: proj;
     padding-top: 15vh;
-    padding-left: 3vw;
 }
 
 h1 {
