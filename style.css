@@ -258,13 +258,20 @@ footer img {
 
     .overlay .opis {
         opacity: 1;
-        background-color: transparent;
+        background-color: rgba(0, 0, 0, 0.5);
     }
 }
 
-@media (max-width: 576px) {
+@media (max-width: 670px) {
+    .overlay h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 470px) {
     .main_wrapper {
-        grid-template-columns: minmax(375px, 1fr);
+        display: grid;
+        grid-template-columns: minmax(240px, 1fr);
         grid-template-areas: 
             "nav"
             "proj"
@@ -281,5 +288,44 @@ footer img {
         margin: 1em 0;
         height: auto;
         width: 100%;
+    }
+
+    .overlay h2 {
+        font-size: 2rem;
+    }
+
+    header {
+        margin: auto;
+        padding: 0.5rem 1rem;
+    }
+
+    .logowrap {
+        background: url(./img/logo_short.svg) no-repeat center;
+        height: 1rem;
+        width: auto;
+        margin: 1rem;
+        align-self: center;
+    }
+
+    .logo {
+        overflow: hidden;
+        margin-bottom: 10px;
+        visibility: hidden;
+        position: absolute;
+    }
+    
+    .navbar {
+        list-style-type: none;
+    }
+    
+    .navbar li {
+        display: inline;
+        padding-right: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .navbar a:hover:before {
+        visibility: hidden;
+        width: 0%;
     }
 }
