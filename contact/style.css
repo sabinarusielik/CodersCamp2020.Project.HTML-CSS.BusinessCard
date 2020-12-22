@@ -1,275 +1,269 @@
 * {
-    margin: 0;
-    padding: 0;
-    border: 0;
-    font-size: 100%;
-    font: inherit;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
 }
 
 *:focus {
-    outline: none;
+  outline: none;
 }
 
 *::selection {
-    background: rgb(255, 138, 27);
+  background: rgb(255, 138, 27);
 }
 
 html {
-    font-family: Gopher;
-    font-size: 20px;
+  font-family: Gopher;
+  font-size: 20px;
 }
 
 .main_wrapper {
-    display: grid;
-    height: 100vh;
-    grid-template-columns: 1fr 250px minmax(450px, 1200px) 1fr;
-    grid-template-rows: 8fr 1fr;
-    grid-template-areas: 
-        "lm nav proj rm"
-        "lm nf  foot rm";
-    gap: 50px;
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 250px minmax(450px, 1200px) 1fr;
+  grid-template-rows: 8fr 1fr;
+  grid-template-areas:
+    "lm nav proj rm"
+    "lm nf  foot rm";
+  gap: 50px;
 }
 
-/* Navbar */
-
 header {
-    grid-area: nav;
-    max-width: 250px;
+  grid-area: nav;
+  max-width: 250px;
 }
 
 .nav_wrapper {
-    min-width: 200px;
-    position: sticky;
-    top: 15vh;
+  min-width: 200px;
+  position: sticky;
+  top: 15vh;
 }
 
 .logo {
-    display: block;
-    margin-bottom: 50px;
-    width: 100%;
-    height: auto;
+  display: block;
+  margin-bottom: 50px;
+  width: 100%;
+  height: auto;
 }
 
 .navbar {
-    list-style-type: none;
-    text-align: center;
+  list-style-type: none;
+  text-align: center;
 }
 
 .navbar a {
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.5);
-    line-height: 2;
-    position: relative;
+  text-decoration: none;
+  color: rgba(0, 0, 0, 0.5);
+  line-height: 2;
+  position: relative;
 }
 
 .navbar a.tutaj {
-    color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 .navbar a:before {
-    content: "";
-    position: absolute;
-    width: 0;
-    height: 5px;
-    bottom: 0;
-    z-index: -1;
-    left: 0;
-    background-color: rgb(255, 138, 27);
-    visibility: hidden;
-    transition: all 0.2s ease-out;
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 5px;
+  bottom: 0;
+  z-index: -1;
+  left: 0;
+  background-color: rgb(255, 138, 27);
+  visibility: hidden;
+  transition: all 0.2s ease-out;
 }
 
 .navbar a:hover:before {
-    visibility: visible;
-    width: 100%;
+  visibility: visible;
+  width: 100%;
 }
 
 .navbar a:hover {
-    color: rgb(0, 0, 0);
+  color: rgb(0, 0, 0);
 }
 
 .navbar a:active {
-    color:  rgb(255, 138, 27);
+  color: rgb(255, 138, 27);
 }
 
-/* kontakt */
-
 .kontakt_wrapper {
-    grid-area: proj;
-    padding-top: 15vh;
+  grid-area: proj;
+  padding-top: 15vh;
 }
 
 h1 {
-    font-size: 3.5rem;
-    font-weight: 700;
-    padding-bottom: 2rem;
+  font-size: 3.5rem;
+  font-weight: 700;
+  padding-bottom: 2rem;
 }
 
-label[for=comment] {
-    display: block;
+label[for="comment"] {
+  display: block;
 }
 
-input[type=email] {
-    display: inline-block;
-    margin-bottom: 1rem;
-    padding-left: 1rem;
+input[type="email"] {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding-left: 1rem;
 }
 
 #comment {
-    display: block;
-    width: 100%;
-    resize: none;
-    padding-top: 0.5rem;
+  display: block;
+  width: 100%;
+  resize: none;
+  padding-top: 0.5rem;
 }
 
-input[type=submit] {
-    float: right;
+input[type="submit"] {
+  float: right;
+  background-color: transparent;
+  border: rgb(255, 138, 27) 5px solid;
+  border-radius: 30px;
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  color: white;
+  background-color: rgb(255, 138, 27);
+}
+
+footer {
+  grid-area: foot;
+  align-self: center;
+}
+
+footer img {
+  max-height: 20px;
+  margin: 1em 0;
+  height: auto;
+  width: 100%;
+}
+
+@media (max-width: 850px) {
+  .main_wrapper {
+    grid-template-columns: 200px 1fr;
+    grid-template-areas:
+      "nav proj"
+      "lr foot";
+    gap: 0;
+  }
+
+  html {
+    font-size: 17px;
+  }
+
+  .kontakt_wrapper {
+    padding: 15vh 2rem 0 2rem;
+  }
+
+  footer img {
+    max-height: 10px;
+  }
+}
+
+@media (max-width: 470px), (max-width: 850px) and (orientation: landscape) {
+  .main_wrapper {
+    display: grid;
+    grid-template-columns: minmax(300px, 1fr);
+    grid-template-rows: 1fr min-content 1fr;
+    grid-template-areas:
+      "nav"
+      "proj"
+      "foot";
+    gap: 0;
+  }
+
+  .nav_wrapper {
+    top: 0;
+  }
+
+  .kontakt_wrapper {
+    padding: 1rem 2rem;
+    text-align: center;
+  }
+
+  footer {
+    max-height: auto;
+  }
+
+  footer img {
+    max-height: 10px;
+    margin: 1em 0;
+    height: auto;
+    width: 100%;
+  }
+
+  header {
+    margin: 0 auto;
+    padding: 0;
+    max-height: auto;
+  }
+
+  .logowrap {
+    background: url(../img/logo_short.svg) no-repeat center;
+    height: 1rem;
+    width: auto;
+    margin: 1rem;
+    align-self: center;
+  }
+
+  .logo {
+    overflow: hidden;
+    margin-bottom: 10px;
+    visibility: hidden;
+    position: absolute;
+  }
+
+  .navbar {
+    list-style-type: none;
+  }
+
+  .navbar li {
+    display: inline;
+    padding-right: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .navbar a:hover:before {
+    visibility: hidden;
+    width: 0%;
+  }
+
+  h1 {
+    color: rgb(255, 138, 27);
+  }
+
+  label {
+    display: block;
+  }
+
+  #comment {
+    resize: none;
+    padding-top: 0.5rem;
+    text-align: center;
+    height: 8rem;
+  }
+
+  input[type="email"] {
+    padding: 0.5rem 0;
+    margin: 0;
+    padding-left: 1rem;
+    text-align: center;
+  }
+
+  input[type="submit"] {
+    float: none;
     background-color: transparent;
     border: rgb(255, 138, 27) 5px solid;
     border-radius: 30px;
     padding: 0.5rem 1rem;
     font-weight: 700;
     transition: all 0.2s ease-in-out;
-}
-
-input[type=submit]:hover {
-    color: white;
-    background-color: rgb(255, 138, 27);
-}
-
-/* Footer */
-
-footer {
-    grid-area: foot;
-    align-self: center;
-}
-
-footer img {
-    max-height: 20px;
-    margin: 1em 0;
-    height: auto;
-    width: 100%;
-}
-
-@media (max-width: 850px) {
-    .main_wrapper {
-        grid-template-columns: 200px 1fr;
-        grid-template-areas: 
-            "nav proj"
-            "lr foot";
-        gap: 0;
-    }
-
-    html {
-        font-size: 17px;
-    }
-
-    .kontakt_wrapper {
-        padding: 15vh 2rem 0 2rem;
-    }
-
-    footer img {
-        max-height: 10px;
-    }
-}
-
-@media (max-width: 470px), (max-width: 850px) and (orientation: landscape) {
-    .main_wrapper {
-        display: grid;
-        grid-template-columns: minmax(300px, 1fr);
-        grid-template-rows: 1fr min-content 1fr;
-        grid-template-areas: 
-            "nav"
-            "proj"
-            "foot";
-        gap: 0;
-    }
-
-    .nav_wrapper {
-        top: 0;
-    }
-
-    .kontakt_wrapper {
-        padding: 1rem 2rem;
-        text-align: center;
-    }
-
-    footer {
-        max-height: auto;
-    }
-
-    footer img {
-        max-height: 10px;
-        margin: 1em 0;
-        height: auto;
-        width: 100%;
-    }
-
-    header {
-        margin: 0 auto;
-        padding: 0;
-        max-height: auto;
-    }
-
-    .logowrap {
-        background: url(../img/logo_short.svg) no-repeat center;
-        height: 1rem;
-        width: auto;
-        margin: 1rem;
-        align-self: center;
-    }
-
-    .logo {
-        overflow: hidden;
-        margin-bottom: 10px;
-        visibility: hidden;
-        position: absolute;
-    }
-    
-    .navbar {
-        list-style-type: none;
-    }
-    
-    .navbar li {
-        display: inline;
-        padding-right: 0.5rem;
-        font-size: 0.8rem;
-    }
-
-    .navbar a:hover:before {
-        visibility: hidden;
-        width: 0%;
-    }
-
-    h1 {
-        color: rgb(255, 138, 27);
-    }
-
-    label {
-        display: block;
-    }
-
-    #comment {
-        resize: none;
-        padding-top: 0.5rem;
-        text-align: center;
-        height: 8rem;
-    }
-
-    input[type=email] {
-        padding: 0.5rem 0;
-        margin: 0;
-        padding-left: 1rem;
-        text-align: center;
-    }
-
-    input[type=submit] {
-        float: none;
-        background-color: transparent;
-        border: rgb(255, 138, 27) 5px solid;
-        border-radius: 30px;
-        padding: 0.5rem 1rem;
-        font-weight: 700;
-        transition: all 0.2s ease-in-out;
-    }
+  }
 }
